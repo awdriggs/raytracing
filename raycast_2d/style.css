@@ -1,8 +1,41 @@
+
 html, body {
   margin: 0;
   padding: 0;
-  background-color: lightGrey;
+  background-color: Gainsboro;
+  max-width: 800px;
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 10px auto;
+  color: #4E4B5C;
 }
+
 canvas {
   display: block;
+  background-color: white;
+  margin: 20px auto;
+}
+h2 {
+  margin-bottom: 0px;
+}
+
+a{
+  color: #4E4B5C;
+}
+
+a:hover {
+  color: #fc9dd8;   
+}
+
+.main-title {
+  font-size: 3rem;
+
+} 
+
+.project {
+  display: inline-block;
+  width: 150px;   
+}
+
+.card p {
+  display: inline-block;
 }
