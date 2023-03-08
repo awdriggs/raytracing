@@ -78,7 +78,7 @@ function drawScreen(){
 function checkMove(){
   if (keyIsDown(LEFT_ARROW)) {
     if(c.x > 2*(width/6) + circSize/2 + 10){ //don't let the circle bash into screne
-      c.x -= 5;
+      c.x -= 10;
     }
   }
 
