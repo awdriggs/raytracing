@@ -23,19 +23,20 @@ a{
 }
 
 a:hover {
-  color: #fc9dd8;   
+  color: #fc9dd8;
 }
 
 .main-title {
   font-size: 3rem;
 
-} 
+}
 
 .project {
   display: inline-block;
-  width: 150px;   
+  width: 30%;
 }
 
 .card p {
+  width: 69%;
   display: inline-block;
 }
