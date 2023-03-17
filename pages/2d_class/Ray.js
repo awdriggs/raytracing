@@ -49,10 +49,10 @@ class Ray {
 }
 
 class Pixel {
-  constructor(x,y) {
+  constructor(x,y,s) {
     this.loc = createVector(x,y);
     this.color = 100;
-    this.size = 2;
+    this.size = s;
   }
 
   display() {

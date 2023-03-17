@@ -2,7 +2,9 @@ let eye;
 let ray;
 let objects = [];
 let screenPixels = []; //an empty array to store pixel value
-let screenSize = 200; //pixel length of screen, not HD!
+let screenSize = 300; //pixel length of screen, not HD!
+let pixelSize = 5;
+let numPixels;
 let rays = [];
 let showRays = false;
 
@@ -21,10 +23,12 @@ function setup(){
   }
 
   //build the screen
+  let numPixels = screenSize / pixelSize; 
   let x = 2*(width/6); //x position of the screen
-  for(let i = 0; i < screenSize; i++){
+  let y = height/2 - screenSize/2; 
+  for(let i = 0; i < numPixels; i++){
     //creates a vector for each "pixel" of the screen
-    let p = new Pixel(x, i + height/2 - 100);
+    let p = new Pixel(x, y + i * pixelSize, pixelSize);
     screenPixels.push(p); //add this pixel to the array of pixels
   }
 
@@ -38,7 +42,7 @@ function setup(){
 
 function draw(){
   background(220);
-
+  directions();
   //show a single ray from the camera to the mouse, mostly for testing
   let m = createVector(mouseX, mouseY);
   ray = new Ray(eye, m);
@@ -59,14 +63,21 @@ function draw(){
   //draw the screen
   drawScreen();
 }
+function directions(){
+  text("2D Ray Cast", 20, 20)
+  text("Press v to view rays", 20, 40)
+  text("Press c to render on screen", 20, 60)
+  text("Click and drag to move the circles", 20, 80)
+}
 
 function drawScreen(){
-  strokeWeight(5); //chunky
+  // strokeWeight(5); //chunky
+  noStroke();
   for(let p of screenPixels){
-    stroke(p.color);
-    point(p.loc.x, p.loc.y); //point for this pixel
+    fill(p.color);
+    rect(p.loc.x - p.size/2, p.loc.y - p.size/2, p.size, p.size); //point for this pixel
   }
-  strokeWeight(1); //reset to default
+  // strokeWeight(1); //reset to default
 }
 
 //draggable stuff
