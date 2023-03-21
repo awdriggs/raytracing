@@ -66,7 +66,7 @@ function draw(){
 function directions(){
   text("2D Ray Cast", 20, 20)
   text("Press v to view rays", 20, 40)
-  text("Press c to render on screen", 20, 60)
+  text("Press r to render on screen", 20, 60)
   text("Click and drag to move the circles", 20, 80)
 }
 
@@ -99,12 +99,12 @@ function keyPressed(){
   print(key);
   if(key == "v"){
     showRays ? showRays=false : showRays=true; //toggle rays, using a ternary here 
-  } else if(key == "c"){
-    cast();
+  } else if(key == "r"){
+    render();
   }
 }
  
-function cast(){
+function render(){
   //for each ray,
   //check intersection with the objects list
   for(let i = 0; i < rays.length; i++){
